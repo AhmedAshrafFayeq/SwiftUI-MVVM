@@ -9,11 +9,11 @@ import SwiftUI
 
 struct PeopleView: View {
     
-    @ObservedObject var viewModel = PersonViewModel()
+    @ObservedObject var viewModel = CharacterViewModel()
     var body: some View {
         
         NavigationView{
-            List(viewModel.people, id: \.id){ person in
+            List(viewModel.Characters, id: \.id){ person in
                 HStack{
                     Image(person.imageName)
                         .resizable()
