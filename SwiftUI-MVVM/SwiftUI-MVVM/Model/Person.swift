@@ -9,5 +9,5 @@ import Foundation
 
 struct Person: Identifiable{
     let id =  UUID()
-    var name, email, phoneNumber: String
+    var imageName, name, email, phoneNumber: String
 }

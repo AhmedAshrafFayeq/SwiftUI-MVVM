@@ -8,9 +8,14 @@
 import SwiftUI
 
 struct PeopleView: View {
+    
+    @ObservedObject var viewModel = PersonViewModel()
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        
+        ForEach(viewModel.people){ person in
+            
+            Image(person.imageName)
+        }
     }
 }
 
