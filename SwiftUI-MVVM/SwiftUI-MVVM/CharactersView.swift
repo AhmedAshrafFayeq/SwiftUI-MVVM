@@ -17,6 +17,14 @@ struct CharactersView: View {
                 CharactertCell(character: charcter)
             }
             .navigationTitle("GOT Main Characters")
+            .navigationBarItems(trailing:
+                                    Menu("Menu".uppercased()){
+                                        Button("Reverse", action: viewModel.reverseOrder)
+                                        Button("Remove First", action: viewModel.removeFirst)
+                                        Button("Remove Last", action: viewModel.removeLast)
+                                        Button("Shuffle", action:viewModel.shuffleOrder)
+                                    }
+            )
         }
     }
 }

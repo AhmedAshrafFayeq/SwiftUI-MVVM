@@ -14,7 +14,7 @@ class CharacterViewModel: ObservableObject{
         Characters = addPeople()
     }
     
-    func removeLastPerson(){
+    func removeLast(){
         Characters.removeLast()
     }
     
