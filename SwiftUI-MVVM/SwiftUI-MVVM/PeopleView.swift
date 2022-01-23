@@ -12,9 +12,28 @@ struct PeopleView: View {
     @ObservedObject var viewModel = PersonViewModel()
     var body: some View {
         
-        ForEach(viewModel.people){ person in
-            
-            Image(person.imageName)
+        NavigationView{
+            List(viewModel.people, id: \.id){ person in
+                HStack{
+                    Image(person.imageName)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 130, height: 100)
+                        .cornerRadius(4)
+                        .padding(.vertical, 4)
+                    
+                    VStack(alignment: .leading, spacing: 5){
+                        Text(person.name)
+                            .fontWeight(.semibold)
+                            .minimumScaleFactor(0.5)
+                        
+                        Text(person.email)
+                            .font(.subheadline)
+                            .foregroundColor(.secondary)
+                    }
+                }
+            }
+            .navigationTitle("GOT Main Characters")
         }
     }
 }
